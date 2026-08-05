@@ -8,12 +8,15 @@
 }
 
 :root {
-    --primary-color: #d97706;   /* Energetic Amber/Orange */
-    --dark-bg: #111827;         /* Charcoal Dark Background */
-    --card-bg: #1f2937;         /* Card Background */
-    --text-light: #f9fafb;      /* Main Text Light */
-    --text-muted: #9ca3af;      /* Muted Text */
-    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --primary-color: #facc15;   /* The Den Signature Yellow / Gold */
+    --primary-hover: #eab308;   /* Deeper Gold for hover states */
+    --dark-bg: #0f172a;         /* Deep Slate / Almost Black */
+    --nav-bg: #020617;          /* Ultra Dark Header & Footer */
+    --card-bg: #1e293b;         /* Dark Card Container Background */
+    --border-color: #334155;    /* Subtle dark border */
+    --text-light: #ffffff;      /* Pure White Headlines */
+    --text-muted: #94a3b8;      /* Muted Subtext */
+    --font-family: 'Montserrat', 'Segoe UI', sans-serif;
 }
 
 body {
