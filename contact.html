@@ -3,13 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | The Den Functional Fitness</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Contact & Enquiries | The Den Functional Fitness</title>
 </head>
 <body>
+
     <header>
         <nav class="navbar">
-            <div class="logo"><a href="index.html">THE DEN</a></div>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/den-logo.png" alt="The Den Functional Fitness Logo">
+                </a>
+            </div>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
@@ -24,13 +28,70 @@
     <main>
         <section class="contact-intro">
             <h1>GET IN TOUCH</h1>
-            <p>Have questions? Reach out to our coaching staff.</p>
+            <p>Have questions about membership, classes, or HYROX training? Send us an enquiry below.</p>
+        </section>
+
+        <!-- Enquiry Form Section -->
+        <section class="enquiry-section">
+            <h2>Membership & General Enquiry Form</h2>
+            <form action="#" method="post">
+                <div>
+                    <label for="fullname">Full Name:</label><br>
+                    <input type="text" id="fullname" name="fullname" placeholder="John Doe" required>
+                </div>
+                <br>
+                <div>
+                    <label for="email">Email Address:</label><br>
+                    <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                </div>
+                <br>
+                <div>
+                    <label for="phone">Phone Number:</label><br>
+                    <input type="tel" id="phone" name="phone" placeholder="082 123 4567">
+                </div>
+                <br>
+                <div>
+                    <label for="enquiry-type">Enquiry Category:</label><br>
+                    <select id="enquiry-type" name="enquiry-type">
+                        <option value="general">General Information</option>
+                        <option value="membership">Membership & Packages</option>
+                        <option value="hyrox">HYROX Race Prep</option>
+                        <option value="student">Student/High School Athletics</option>
+                    </select>
+                </div>
+                <br>
+                <div>
+                    <label for="message">Your Message:</label><br>
+                    <textarea id="message" name="message" rows="5" placeholder="Write your enquiry details here..." required></textarea>
+                </div>
+                <br>
+                <button type="submit">Submit Enquiry</button>
+            </form>
+        </section>
+
+        <!-- Location & Embedded Google Map -->
+        <section class="location-section">
+            <h2>Find Us On Campus</h2>
+            <p><strong>Address:</strong> Sandringham High School Campus, Sandringham, Johannesburg</p>
+            <p><strong>Email:</strong> info@thedengym.co.za</p>
+
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3581.536785194164!2d28.10620007541315!3d-26.146681077112004!2m3!1f0!2f0!f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e950d9c43d7c587%3A0xa683db37123fa752!2sSandringham%20High%20School!5e0!3m2!1sen!2sza!4v1700000000000!5m2!1sen!2sza" 
+                    width="100%" 
+                    height="350" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
         </section>
     </main>
 
     <footer>
         <p>&copy; 2026 The Den Functional Fitness. All Rights Reserved.</p>
     </footer>
-    <script src="js/main.js"></script>
+
 </body>
 </html>
