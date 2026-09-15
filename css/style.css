@@ -220,15 +220,27 @@ footer {
     font-size: 0.9rem;
 }
 /* Hero Section Layout */
+/* Full-Width Hero Section Breakdown */
 .hero {
-    background: linear-gradient(RGBA(0, 0, 0, 0.75), RGBA(0, 0, 0, 0.75)), url('../images/den-logo.png') center/cover no-repeat;
+    /* Stretch full viewport width and break out of <main> constraints */
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    
+    /* Full-width background styling */
+    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('../images/den-logo.png') center/cover no-repeat;
     padding: 6rem 2rem;
     text-align: center;
-    border-radius: 8px;
-    margin-bottom: 2rem;
-    border: 1px solid var(--border-color);
+    border-radius: 0; /* Remove rounded corners for edge-to-edge feel */
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
 }
 
+/* Center and constrain inner hero text */
+.hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
 .hero h1 {
     font-size: 3rem;
     color: var(--text-light);
