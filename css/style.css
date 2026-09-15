@@ -1,5 +1,5 @@
 /* ==========================================================================
-   1. GLOBAL RESETS & BRAND VARIABLES
+   1. RESET, VARIABLES & BASE STYLES
    ========================================================================== */
 * {
     margin: 0;
@@ -10,11 +10,12 @@
 :root {
     --bg-dark: #121212;
     --bg-card: #1E1E1E;
+    --bg-header: #0A0A0A;
     --text-light: #F4F4F4;
     --text-muted: #A0A0A0;
-    --accent-color: #E63946;
+    --accent: #E63946;
     --accent-hover: #D62828;
-    --border-color: #333333;
+    --border: #333333;
     --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -25,12 +26,35 @@ body {
     line-height: 1.6;
 }
 
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+section { margin-bottom: 3rem; }
+
+h1, h2, h3 {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 1.8rem; color: var(--accent); }
+h3 { font-size: 1.2rem; }
+
 /* ==========================================================================
-   2. HEADER & NAVIGATION
+   2. NAVIGATION & FOOTER
    ========================================================================== */
+header, footer {
+    background-color: var(--bg-header);
+    border-color: var(--border);
+    border-style: solid;
+}
+
 header {
-    background-color: #0A0A0A;
-    border-bottom: 2px solid var(--border-color);
+    border-bottom-width: 2px;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -60,33 +84,33 @@ header {
     transition: color 0.3s ease;
 }
 
-.nav-links a:hover,
-.nav-links a.active {
-    color: var(--accent-color);
+.nav-links a:hover, .nav-links a.active { color: var(--accent); }
+
+footer {
+    border-top-width: 2px;
+    text-align: center;
+    padding: 1.5rem;
+    color: var(--text-muted);
+    font-size: 0.9rem;
 }
 
 /* ==========================================================================
-   3. MAIN LAYOUT & SECTIONS
+   3. HERO SECTION (FULL WIDTH)
    ========================================================================== */
-main {
+.hero {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('../images/den-logo.png') center/cover no-repeat;
+    padding: 6rem 2rem;
+    text-align: center;
+    border-y: 1px solid var(--border);
+}
+
+.hero-content {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem;
 }
-
-section {
-    margin-bottom: 3rem;
-}
-
-h1, h2, h3 {
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 1rem;
-}
-
-h1 { font-size: 2.5rem; }
-h2 { font-size: 1.8rem; color: var(--accent-color); }
-h3 { font-size: 1.2rem; }
 
 /* ==========================================================================
    4. CARDS & GRID LAYOUTS
@@ -100,7 +124,7 @@ h3 { font-size: 1.2rem; }
 
 .card {
     background-color: var(--bg-card);
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--border);
     border-radius: 8px;
     padding: 1.5rem;
     text-align: center;
@@ -110,17 +134,8 @@ h3 { font-size: 1.2rem; }
     align-items: center;
 }
 
-.card img {
-    margin-bottom: 1rem;
-    border-radius: 4px;
-}
-
-.card .price {
-    font-size: 1.4rem;
-    font-weight: bold;
-    color: var(--accent-color);
-    margin: 0.5rem 0;
-}
+.card img { margin-bottom: 1rem; border-radius: 4px; }
+.card .price { font-size: 1.4rem; font-weight: bold; color: var(--accent); margin: 0.5rem 0; }
 
 .card ul {
     list-style: none;
@@ -131,14 +146,14 @@ h3 { font-size: 1.2rem; }
 
 .card ul li {
     padding: 0.4rem 0;
-    border-bottom: 1px dashed var(--border-color);
+    border-bottom: 1px dashed var(--border);
 }
 
 /* Buttons */
 .btn, button[type="submit"] {
     display: inline-block;
-    background-color: var(--accent-color);
-    color: #FFFFFF;
+    background-color: var(--accent);
+    color: #FFF;
     padding: 0.75rem 1.5rem;
     text-decoration: none;
     font-weight: bold;
@@ -150,12 +165,10 @@ h3 { font-size: 1.2rem; }
     margin-top: 1rem;
 }
 
-.btn:hover, button[type="submit"]:hover {
-    background-color: var(--accent-hover);
-}
+.btn:hover, button[type="submit"]:hover { background-color: var(--accent-hover); }
 
 /* ==========================================================================
-   5. TIMETABLE & TABLES
+   5. TABLES & FORMS
    ========================================================================== */
 table {
     width: 100%;
@@ -164,26 +177,14 @@ table {
     background-color: var(--bg-card);
 }
 
-th, td {
-    border: 1px solid var(--border-color);
-    padding: 1rem;
-    text-align: left;
-}
+th, td { border: 1px solid var(--border); padding: 1rem; text-align: left; }
+th { background-color: var(--bg-header); color: var(--accent); text-transform: uppercase; }
 
-th {
-    background-color: #0A0A0A;
-    color: var(--accent-color);
-    text-transform: uppercase;
-}
-
-/* ==========================================================================
-   6. FORMS & CONTACT LAYOUT
-   ========================================================================== */
 form {
     background-color: var(--bg-card);
     padding: 2rem;
     border-radius: 8px;
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--border);
     max-width: 600px;
 }
 
@@ -192,86 +193,26 @@ form input, form select, form textarea {
     padding: 0.75rem;
     margin-top: 0.25rem;
     background-color: var(--bg-dark);
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--border);
     color: var(--text-light);
     border-radius: 4px;
 }
 
-form input:focus, form select:focus, form textarea:focus {
-    outline: 1px solid var(--accent-color);
-}
+form input:focus, form select:focus, form textarea:focus { outline: 1px solid var(--accent); }
 
 .map-container {
     margin-top: 1rem;
-    border: 2px solid var(--border-color);
+    border: 2px solid var(--border);
     border-radius: 8px;
     overflow: hidden;
 }
 
 /* ==========================================================================
-   7. FOOTER
+   6. RESPONSIVE DESIGN
    ========================================================================== */
-footer {
-    background-color: #0A0A0A;
-    border-top: 2px solid var(--border-color);
-    text-align: center;
-    padding: 1.5rem;
-    color: var(--text-muted);
-    font-size: 0.9rem;
-}
-/* Hero Section Layout */
-/* Full-Width Hero Section Breakdown */
-.hero {
-    /* Stretch full viewport width and break out of <main> constraints */
-    width: 100vw;
-    margin-left: calc(-50vw + 50%);
-    margin-right: calc(-50vw + 50%);
-    
-    /* Full-width background styling */
-    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('../images/den-logo.png') center/cover no-repeat;
-    padding: 6rem 2rem;
-    text-align: center;
-    border-radius: 0; /* Remove rounded corners for edge-to-edge feel */
-    border-top: 1px solid var(--border-color);
-    border-bottom: 1px solid var(--border-color);
-}
-
-/* Center and constrain inner hero text */
-.hero-content {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-.hero h1 {
-    font-size: 3rem;
-    color: var(--text-light);
-    margin-bottom: 0.5rem;
-}
-
-.hero p {
-    font-size: 1.2rem;
-    color: var(--text-muted);
-    max-width: 600px;
-    margin: 0 auto 1.5rem auto;
-}
-
-/* Responsive Grid Adjustments */
 @media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    .nav-links {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 1rem;
-    }
-
-    .hero h1 {
-        font-size: 2rem;
-    }
-
-    form {
-        width: 100%;
-    }
+    .navbar { flex-direction: column; gap: 1rem; }
+    .nav-links { flex-wrap: wrap; justify-content: center; gap: 1rem; }
+    .hero h1 { font-size: 2rem; }
+    form { width: 100%; }
 }
