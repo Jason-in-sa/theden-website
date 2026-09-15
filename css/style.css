@@ -219,3 +219,47 @@ footer {
     color: var(--text-muted);
     font-size: 0.9rem;
 }
+/* Hero Section Layout */
+.hero {
+    background: linear-gradient(RGBA(0, 0, 0, 0.75), RGBA(0, 0, 0, 0.75)), url('../images/den-logo.png') center/cover no-repeat;
+    padding: 6rem 2rem;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    border: 1px solid var(--border-color);
+}
+
+.hero h1 {
+    font-size: 3rem;
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto 1.5rem auto;
+}
+
+/* Responsive Grid Adjustments */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    form {
+        width: 100%;
+    }
+}
