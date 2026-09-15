@@ -101,10 +101,21 @@ footer {
     width: 100vw;
     margin-left: calc(-50vw + 50%);
     margin-right: calc(-50vw + 50%);
-    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('../images/den-logo.png') center/cover no-repeat;
-    padding: 6rem 2rem;
+    margin-top: -2rem; 
+    margin-bottom: 3rem;
+    
+    /* Increased padding to expose more of the background image */
+    padding: 10rem 2rem; 
+    min-height: 60vh; /* Ensures the section takes up at least 60% of the screen height */
+    
+    /* Layout alignment to keep text perfectly centered vertically */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('../images/den-logo.png') center/cover no-repeat;
     text-align: center;
-    border-y: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
 }
 
 .hero-content {
