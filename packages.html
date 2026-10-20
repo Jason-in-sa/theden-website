@@ -35,6 +35,24 @@
             <p>Specialized rates available for Sandringham High School students and verified alumni.</p>
         </section>
 
+        <section class="calculator-section">
+            <h2>Membership Fee Estimator</h2>
+            <div class="card">
+                <label for="calc-package">Select Package:</label>
+                <select id="calc-package">
+                    <option value="850">Standard Unlimited - R850 / mo</option>
+                    <option value="650">3 Sessions per Week - R650 / mo</option>
+                    <option value="150">Drop-in Session - R150</option>
+                </select>
+                <br><br>
+                <label>
+                    <input type="checkbox" id="calc-student"> Sandringham High Student / Alumni (15% Off)
+                </label>
+                <br><br>
+                <h3>Estimated Monthly Price: <span id="calc-total" style="color: var(--accent);">R850.00</span></h3>
+            </div>
+        </section>
+        
         <section class="pricing-tiers">
             <div class="card-grid">
                 <article class="card">
@@ -90,6 +108,6 @@
     <footer>
         <p>&copy; 2026 The Den Functional Fitness. All Rights Reserved.</p>
     </footer>
-
+    <script src="js/main.js"></script>
 </body>
 </html>

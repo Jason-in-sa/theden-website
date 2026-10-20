@@ -37,7 +37,7 @@
 
         <section class="enquiry-section">
             <h2>Enquiry Form</h2>
-            <form action="#" method="post">
+            <form id="contact-form" action="#" method="post">
                 <div>
                     <label for="fullname">Full Name:</label><br>
                     <input type="text" id="fullname" name="fullname" placeholder="John Doe" required>
@@ -68,7 +68,11 @@
                     <textarea id="message" name="message" rows="5" placeholder="How can we help you?" required></textarea>
                 </div>
                 <br>
-                <button type="submit">Submit Enquiry</button>
+    
+                <!-- Dynamic Feedback Message Container for JS -->
+                <div id="form-feedback" style="display: none; margin-bottom: 1rem; font-weight: bold;"></div>
+
+                <button type="submit" class="btn">Submit Enquiry</button>
             </form>
         </section>
 
@@ -92,6 +96,6 @@
     <footer>
         <p>&copy; 2026 The Den Functional Fitness. All Rights Reserved.</p>
     </footer>
-
+    <script src="js/main.js"></script>
 </body>
 </html>
