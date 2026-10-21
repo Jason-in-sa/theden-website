@@ -181,3 +181,79 @@ document.addEventListener('DOMContentLoaded', () => {
         suggestionFeedback.style.display = 'block';
     }
 
+    // ----------------------------------------------------------------------
+    // GLOBAL SITE-WIDE SEARCH SYSTEM
+    // ----------------------------------------------------------------------
+    const siteIndex = [
+        { title: "Home", url: "index.html", content: "The Den Training Club functional fitness gym Sandringham High School classes workouts" },
+        { title: "About Us", url: "about.html", content: "About team coaches facility community Sandringham functional fitness equipment" },
+        { title: "The Program", url: "program.html", content: "HYROX endurance strength conditioning timetable schedule daily workout routines" },
+        { title: "Our Packages", url: "packages.html", content: "Membership pricing fees tiers monthly student discount Sandringham High rates" },
+        { title: "Shop & Merchandise", url: "shop.html", content: "Store apparel hoodies tees jacket Marike Hartman supporters tee limited edition" },
+        { title: "Contact Us", url: "contact.html", content: "Location map address operating hours phone email Sandringham High School" },
+        { title: "Make an Enquiry", url: "enquiry.html", content: "Enquiry form questions membership details support join registration" }
+    ];
+
+    const searchOpenBtn = document.querySelector('#search-open-btn');
+    const searchCloseBtn = document.querySelector('#search-close-btn');
+    const searchModal = document.querySelector('#search-modal');
+    const siteSearchInput = document.querySelector('#site-search-input');
+    const searchResults = document.querySelector('#search-results');
+
+    if (searchOpenBtn && searchModal) {
+        searchOpenBtn.addEventListener('click', () => {
+            searchModal.style.display = 'flex';
+            searchModal.setAttribute('aria-hidden', 'false');
+            if (siteSearchInput) siteSearchInput.focus();
+        });
+
+        function closeSearchModal() {
+            searchModal.style.display = 'none';
+            searchModal.setAttribute('aria-hidden', 'true');
+            if (siteSearchInput) siteSearchInput.value = '';
+            if (searchResults) searchResults.innerHTML = '';
+        }
+
+        if (searchCloseBtn) searchCloseBtn.addEventListener('click', closeSearchModal);
+
+        searchModal.addEventListener('click', (e) => {
+            if (e.target === searchModal) closeSearchModal();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && searchModal.style.display === 'flex') {
+                closeSearchModal();
+            }
+        });
+
+        if (siteSearchInput) {
+            siteSearchInput.addEventListener('input', (e) => {
+                const query = e.target.value.toLowerCase().trim();
+                searchResults.innerHTML = '';
+
+                if (query.length === 0) return;
+
+                const matches = siteIndex.filter(page => 
+                    page.title.toLowerCase().includes(query) || 
+                    page.content.toLowerCase().includes(query)
+                );
+
+                if (matches.length === 0) {
+                    searchResults.innerHTML = '<p style="color: #aaaaaa; text-align: center;">No matching pages found.</p>';
+                    return;
+                }
+
+                matches.forEach(page => {
+                    const resultLink = document.createElement('a');
+                    resultLink.href = page.url;
+                    resultLink.className = 'search-result-item';
+                    resultLink.innerHTML = `
+                        <h4>${page.title}</h4>
+                        <p>Matches keywords related to "${query}"</p>
+                    `;
+                    searchResults.appendChild(resultLink);
+                });
+            });
+        }
+    }
+

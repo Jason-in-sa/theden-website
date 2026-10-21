@@ -13,6 +13,17 @@
 
     <header>
         <nav class="navbar">
+            <!-- Site-Wide Search Button & Modal (Add to Header) -->
+<button id="search-open-btn" class="search-btn" aria-label="Search website">🔍</button>
+
+<div id="search-modal" class="search-modal" aria-hidden="true">
+    <div class="search-modal-content">
+        <span id="search-close-btn" class="search-close">&times;</span>
+        <h2>Search The Den</h2>
+        <input type="text" id="site-search-input" placeholder="Type to search pages, classes, prices, or merch..." autofocus>
+        <div id="search-results" class="search-results-list"></div>
+    </div>
+</div>
             <div class="logo">
                 <a href="index.html">
         <img src="images/den-logo.png" alt="The Den Functional Fitness Logo" width="120">
