@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Submit an enquiry to The Den Training Club at Sandringham High School. Get in touch regarding memberships, HYROX training, and class schedules.">
+    <meta name="keywords" content="The Den, Enquiry, Functional Fitness, HYROX, Sandringham High School, Gym Contact">
+    <meta name="author" content="Jason Read">
+    <title>Make an Enquiry | The Den Functional Fitness Club</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/den-logo.png" alt="The Den Functional Fitness Logo" width="120">
+                </a>
+            </div>
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="program.html">The Program</a></li>
+                <li><a href="packages.html">Our Packages</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="enquiry.html" class="active">Enquire</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section class="hero">
+            <h1>Membership & General Enquiries</h1>
+            <p>Have questions about joining The Den? Send us a message below and our team will get back to you shortly.</p>
+        </section>
+
+        <section class="form-section">
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" placeholder="Your full name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="yourname@example.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Your Enquiry</label>
+                    <textarea id="message" rows="5" placeholder="Tell us what you'd like to know..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn">Submit Enquiry</button>
+                <div id="form-feedback" style="display: none; margin-top: 15px;"></div>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 The Den Functional Fitness. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JavaScript Link -->
+    <script src="js/main.js"></script>
+</body>
+</html>
