@@ -149,3 +149,35 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+// ----------------------------------------------------------------------
+    // 5. SUGGESTION FORM VALIDATION
+    // ----------------------------------------------------------------------
+    const suggestionForm = document.querySelector('#suggestion-form');
+    const suggestionFeedback = document.querySelector('#suggestion-feedback');
+
+    if (suggestionForm) {
+        suggestionForm.addEventListener('submit', (e) => {
+            e.preventDefault(); // Prevent page refresh
+
+            const category = document.querySelector('#sugg-category').value;
+            const message = document.querySelector('#sugg-message').value.trim();
+
+            if (!category || !message) {
+                showSuggestionFeedback('Please fill out all fields before submitting.', '#E63946');
+                return;
+            }
+
+            // Success output
+            showSuggestionFeedback('Thank you! Your suggestion has been submitted.', '#2A9D8F');
+            suggestionForm.reset();
+        });
+    }
+
+    function showSuggestionFeedback(text, color) {
+        if (!suggestionFeedback) return;
+        suggestionFeedback.textContent = text;
+        suggestionFeedback.style.backgroundColor = color;
+        suggestionFeedback.style.color = '#ffffff';
+        suggestionFeedback.style.display = 'block';
+    }
+

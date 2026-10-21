@@ -266,6 +266,23 @@ footer {
 }
 
 /* ==========================================================================
+   SUGGESTION FORM
+   ========================================================================== */
+.suggestion-section {
+    margin-top: 3rem;
+    padding: 2rem;
+    background-color: var(--bg-card, #1e1e1e);
+    border: 1px solid var(--border-color, #333333);
+    border-radius: 8px;
+}
+
+#suggestion-feedback {
+    padding: 10px 15px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+/* ==========================================================================
    LIGHTBOX MODAL & GALLERY NAVIGATION
    ========================================================================== */
 .lightbox {
